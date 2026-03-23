@@ -2,7 +2,16 @@
 import { computed, ref } from "vue";
 import TheHeader from "./components/TheHeader.vue";
 import BaseInputNumber from "./components/BaseInputNumber.vue";
+import { useHashRoute } from "./composable/useHashRoute.js";
+import Home from "./pages/PageHome.vue";
+import Temperature from "./pages/PageTemperature.vue";
 
+const routes = {
+    'home': Home,
+    'temperature': Temperature
+};
+
+const { currentPage } = useHashRoute(routes);
 const temperatureSi = ref(0); //En Kelvin
 
 const tempKelvin = defineModel("kelvin", {
@@ -23,6 +32,10 @@ const tempFahrenheit = defineModel("fahrenheit", {
 
 <template>
     <TheHeader />
+    <main>
+      <Home v-if="currentPage === 'home'"/>
+      <Temperature v-if="currentPage === 'temperature'" />
+    </main>
     <section>
         <BaseInputNumber label="Temperature in Kelvin" v-model="tempKelvin" />
         <BaseInputNumber label="Temperature in Celsius" v-model="tempCelsius" />

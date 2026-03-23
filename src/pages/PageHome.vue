@@ -3,11 +3,9 @@
 </script>
 
 <template>
-  <header>
-    <h1>Conversion App</h1>
-  </header>
+  <h2>Home</h2>
 </template>
 
 <style scoped>
-
+  
 </style>
