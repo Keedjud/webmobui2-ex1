@@ -7,7 +7,7 @@ const temperatureSi = ref(0); //En Kelvin
 
 const tempKelvin = defineModel("kelvin", {
     get: () => {
-        return temperatureSi.value.toFixed(2);
+        return parseFloat(temperatureSi.value.toFixed(2));
     },
     set: (value) => {
         temperatureSi.value = Number(value);
@@ -16,7 +16,7 @@ const tempKelvin = defineModel("kelvin", {
 
 const tempCelsius = defineModel("celsius", {
     get: () => {
-        return (temperatureSi.value - 273.15).toFixed(2);
+        return parseFloat((temperatureSi.value - 273.15).toFixed(2));
     },
     set: (value) => {
         temperatureSi.value = Number(value + 273.15);
@@ -25,7 +25,7 @@ const tempCelsius = defineModel("celsius", {
 
 const tempFahrenheit = defineModel("fahrenheit", {
     get: () => {
-        return (((temperatureSi.value - 273.15) * 9) / 5 + 32).toFixed(2);
+        return parseFloat((((temperatureSi.value - 273.15) * 9) / 5 + 32).toFixed(2));
     },
     set: (value) => {
         temperatureSi.value = Number(((value - 32) * 5) / 9 + 273.15);
