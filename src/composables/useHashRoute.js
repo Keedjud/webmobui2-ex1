@@ -1,6 +1,4 @@
-import { ref } from "vue";
-
-import { computed, onBeforeUnmount, onMounted, shallowRef } from 'vue';
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 
 function normalizeHash(hash) {
   return hash.startsWith('#') ? hash : `#${hash}`;
