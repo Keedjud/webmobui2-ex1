@@ -1,22 +1,27 @@
 <script setup>
 import TheHeader from "./components/TheHeader.vue";
-import { useHashRoute } from "./composable/useHashRoute.js";
-import Home from "./pages/PageHome.vue";
-import Temperature from "./pages/PageTemperature.vue";
+import { useHashRoute } from "./composables/useHashRoute.js";
+import Home from "./pages/Home.vue";
+import Temperature from "./pages/Temperature.vue";
 
-const routes = {
-    home: Home,
-    temperature: Temperature,
-};
+const routes = [
+    {
+        hash: '#home',
+        component: Home
+    },
+    {
+        hash: '#temperature',
+        component: Temperature
+    }
+];
 
-const { currentPage } = useHashRoute(routes);
+const { currentComponent, currentRoute, navigateTo } = useHashRoute(routes);
 </script>
 
 <template>
-    <TheHeader />
+    <TheHeader>Conversion App</TheHeader>
     <main>
-        <Home v-if="currentPage === 'home'" />
-        <Temperature v-if="currentPage === 'temperature'" />
+        <component :is="currentComponent" />
     </main>
 </template>
 
