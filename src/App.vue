@@ -24,7 +24,7 @@ const { currentComponent, currentRoute, navigateTo } = useHashRoute(routes);
 </script>
 
 <template>
-    <TheHeader>Conversion App</TheHeader>
+    <TheHeader :routes="routes" :current-route="currentRoute">Conversion App</TheHeader>
     <main>
         <component :is="currentComponent" />
     </main>
