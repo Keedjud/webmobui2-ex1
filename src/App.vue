@@ -3,6 +3,7 @@ import TheHeader from "./components/TheHeader.vue";
 import { useHashRoute } from "./composables/useHashRoute.js";
 import Home from "./pages/Home.vue";
 import Temperature from "./pages/Temperature.vue";
+import Bites from "./pages/Bites.vue";
 
 const routes = [
     {
@@ -12,6 +13,10 @@ const routes = [
     {
         hash: '#temperature',
         component: Temperature
+    },
+    {
+        hash: '#bites',
+        component: Bites
     }
 ];
 

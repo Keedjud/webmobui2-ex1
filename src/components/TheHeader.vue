@@ -18,6 +18,7 @@
     <nav>
       <a href="#home">Home</a>
       <a href="#temperature">Temperature</a>
+      <a href="#bites">Bytes/Bits</a>
     </nav>
   </header>
 </template>
