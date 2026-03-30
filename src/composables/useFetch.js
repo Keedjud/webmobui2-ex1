@@ -10,6 +10,5 @@ export function useFetch(url) {
     loading.value = false;
   })
 
-
   return {data, error, loading};
 }

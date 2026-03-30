@@ -4,20 +4,13 @@ import { useHashRoute } from "./composables/useHashRoute.js";
 import Home from "./pages/Home.vue";
 import Temperature from "./pages/Temperature.vue";
 import Bits from "./pages/Bits.vue";
+import Schedule from "./pages/Schedule.vue";
 
 const routes = [
-    {
-        hash: '#home',
-        component: Home
-    },
-    {
-        hash: '#temperature',
-        component: Temperature
-    },
-    {
-        hash: '#bits',
-        component: Bits
-    }
+    { hash: '#home', component: Home},
+    { hash: '#temperature', component: Temperature },
+    { hash: '#bits', component: Bits },
+    { hash: '#schedule', component: Schedule }
 ];
 
 const { currentComponent, currentRoute, navigateTo } = useHashRoute(routes);
