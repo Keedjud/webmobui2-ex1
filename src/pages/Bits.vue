@@ -31,18 +31,20 @@ const dataGigabytes = defineModel("gigabytes", {
 </script>
 
 <template>
-    <h2>Data Converter (Bytes/Bits)</h2>
     <section>
-        <BaseInputNumber label="Data in Bits" v-model="dataBits" />
-        <BaseInputNumber label="Data in Bytes" v-model="dataBytes" />
-        <BaseInputNumber label="Data in Kilobytes (KB)" v-model="dataKilobytes" />
-        <BaseInputNumber label="Data in Megabytes (MB)" v-model="dataMegabytes" />
-        <BaseInputNumber label="Data in Gigabytes (GB)" v-model="dataGigabytes" />
+        <h2>Data Converter (Bytes/Bits)</h2>
+        <div>
+            <BaseInputNumber label="Data in Bits" v-model="dataBits" />
+            <BaseInputNumber label="Data in Bytes" v-model="dataBytes" />
+            <BaseInputNumber label="Data in Kilobytes (KB)" v-model="dataKilobytes" />
+            <BaseInputNumber label="Data in Megabytes (MB)" v-model="dataMegabytes" />
+            <BaseInputNumber label="Data in Gigabytes (GB)" v-model="dataGigabytes" />
+        </div>
     </section>
 </template>
 
 <style scoped>
-section {
+div {
     display: grid;
     margin: 2rem;
     gap: 1rem;

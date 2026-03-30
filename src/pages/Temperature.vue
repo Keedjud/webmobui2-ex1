@@ -23,16 +23,18 @@ const tempFahrenheit = defineModel("fahrenheit", {
 </script>
 
 <template>
-    <h2>Temperature Converter</h2>
     <section>
-        <BaseInputNumber label="Temperature in Kelvin" v-model="tempKelvin" />
-        <BaseInputNumber label="Temperature in Celsius" v-model="tempCelsius" />
-        <BaseInputNumber label="Temperature in Fahrenheit" v-model="tempFahrenheit" />
+        <h2>Temperature Converter</h2>
+        <div>
+            <BaseInputNumber label="Temperature in Kelvin" v-model="tempKelvin" />
+            <BaseInputNumber label="Temperature in Celsius" v-model="tempCelsius" />
+            <BaseInputNumber label="Temperature in Fahrenheit" v-model="tempFahrenheit" />
+        </div>
     </section>
 </template>
 
 <style scoped>
-section {
+div {
     display: grid;
     margin: 2rem;
     gap: 1rem;
